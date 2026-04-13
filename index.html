@@ -1007,7 +1007,7 @@ function calc(){
 function showResult(){
   const r=calc();
   const data=TYPES[r.type]||TYPES['INTP'];
-  const avcfg=AVATARS[r.type]||AVATARS['INTP'];
+  const avcfg=Object.assign({}, AVATARS[r.type]||AVATARS['INTP'], { ear: petType==='dog' ? 'dog' : 'cat' });
 
   // Avatar
   document.getElementById('r-avatar').innerHTML=makeSVG(avcfg);
